@@ -1,11 +1,8 @@
-import React from 'react';
+import { useAuth } from "../contexts/AuthContext";
 
 const useRole = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  const { userRole } = useAuth();
+  return userRole;
 };
 
 export default useRole;

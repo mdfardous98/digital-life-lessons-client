@@ -1,11 +1,8 @@
-import React from 'react';
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
 const useStripe = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return stripePromise;
 };
-
 export default useStripe;

@@ -1,11 +1,3 @@
-import React from 'react';
+import axios from "axios";
 
-const axiosConfig = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
-
-export default axiosConfig;
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
