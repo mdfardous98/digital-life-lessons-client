@@ -23,7 +23,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500 footer-grid">
+    <footer className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500 footer-grid container">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ">
         {/* 3 columns */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 footer-container">
@@ -46,7 +46,7 @@ const Footer = () => {
 
             {/* Social icons + Back to Top */}
             <div className="flex items-center space-x-4">
-              <div className="flex space-x-3">
+              <div className="flex gap-[10px]">
                 <a
                   href={socialLinks.facebook}
                   target="_blank"
@@ -92,7 +92,7 @@ const Footer = () => {
           </div>
 
           {/* Column 2  */}
-          <div className="space-y-6 footer-col-2">
+          <div className="space-y-6 footer-col-2 ">
             <div>
               <Link
                 to="/terms"

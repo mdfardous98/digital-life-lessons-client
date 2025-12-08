@@ -40,9 +40,9 @@ const Navbar = () => {
 
   return (
     <header className="header container">
-      <div className="navbar">
+      <div className="navbar ">
         {/* Logo*/}
-        <div className="nav-brand">
+        <div className="nav-brand ">
           <Link to="/">
             <img src={logo} alt="Logo" className="logo" />
           </Link>
