@@ -1,11 +1,3 @@
-import React from 'react';
-
-const validators = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+export const validatePassword = (pass) => {
+  return /[A-Z]/.test(pass) && /[a-z]/.test(pass) && pass.length >= 6;
 };
-
-export default validators;

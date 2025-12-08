@@ -1,11 +1,2 @@
-import React from 'react';
-
-const formatters = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
-
-export default formatters;
+export const truncateText = (text, length = 100) =>
+  text.length > length ? text.slice(0, length) + "..." : text;
