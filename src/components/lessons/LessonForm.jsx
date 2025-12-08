@@ -15,7 +15,7 @@ const categories = [
 ];
 const tones = ["Motivational", "Sad", "Realization", "Gratitude"];
 
-export default function LessonForm({ onSuccess }) {
+const LessonForm = ({ onSuccess }) => {
   const { currentUser, isPremium } = useAuth();
   const [loading, setLoading] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
@@ -207,4 +207,6 @@ export default function LessonForm({ onSuccess }) {
       </form>
     </>
   );
-}
+};
+
+export default LessonForm;
