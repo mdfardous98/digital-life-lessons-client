@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
+
+import Loader from "../../components/common/Loader";
 
 const LoadingPage = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return <Loader />;
 };
 
 export default LoadingPage;
