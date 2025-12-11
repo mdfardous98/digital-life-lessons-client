@@ -157,7 +157,7 @@ const Navbar = () => {
                         navigate("/dashboard/profile");
                         setIsAvatarOpen(false);
                       }}
-                      className="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="w-full text-left px-3 py-2 text-primary-600  dark:text-badge-premium hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                       Profile
                     </button>
@@ -167,7 +167,7 @@ const Navbar = () => {
                         navigate("/dashboard");
                         setIsAvatarOpen(false);
                       }}
-                      className="w-full text-left px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+                      className="w-full text-left px-3 py-2 text-primary-600 dark:text-badge-premium  hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                       Dashboard
                     </button>

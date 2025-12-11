@@ -169,7 +169,7 @@ const MyLessons = () => {
         <div className="mb-8">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">
+              <h1 className="text-3xl font-bold dark:text-secondary-500 mb-2">
                 My Lessons
               </h1>
               <p className="text-gray-500">

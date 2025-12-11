@@ -88,7 +88,7 @@ const Home = () => {
       bgColor: "from-green-400 to-teal-600",
       buttonText: "Explore Lessons",
       buttonLink: "/public-lessons",
-      buttonColor: "bg-white text-green-600 hover:bg-gray-100",
+      buttonColor: "bg-white text-green-600 hover:bg-gray-800",
     },
     {
       title: "Upgrade to Premium",
@@ -96,7 +96,7 @@ const Home = () => {
       bgColor: "from-purple-500 to-pink-600",
       buttonText: "Get Premium",
       buttonLink: "/pricing",
-      buttonColor: "bg-white text-purple-600 hover:bg-gray-100",
+      buttonColor: "bg-white text-purple-600 hover:bg-gray-800",
     },
   ];
 
@@ -216,7 +216,7 @@ const Home = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Featured Life Lessons
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-blue-600 max-w-2xl mx-auto">
               Discover handpicked lessons that inspire, teach, and transform
             </p>
           </div>
@@ -225,7 +225,7 @@ const Home = () => {
             {featuredLessons.map((lesson) => (
               <div
                 key={lesson._id}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300"
+                className="bg-amber-200 rounded-xl shadow-lg overflow-hidden hover:shadow-rose-400 transition-shadow duration-300"
               >
                 {lesson.image && (
                   <img
@@ -236,10 +236,10 @@ const Home = () => {
                 )}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">
+                    <span className="px-3 py-1 bg-blue-100 text-secondary-600 rounded-full text-sm">
                       {lesson.category || "General"}
                     </span>
-                    <span className="px-3 py-1 bg-teal-100 text-teal-600 rounded-full text-sm">
+                    <span className="px-3 py-1 bg-teal-100 text-green-600 rounded-full text-sm">
                       {lesson.emotionalTone || "Neutral"}
                     </span>
                   </div>
@@ -255,9 +255,9 @@ const Home = () => {
                           "https://yourdomain.com/images/default.jpg"
                         }
                         alt={lesson.author?.displayName || "Anonymous"}
-                        className="w-8 h-8 rounded-full object-cover border-2 border-white shadow-md"
+                        className="w-8 h-8 rounded-full object-cover border-2 border-lime-400 shadow-md"
                       />
-                      <span className="text-sm text-gray-600">
+                      <span className="text-sm text-cyan-800">
                         {lesson.author?.displayName || "Anonymous"}
                       </span>
                     </div>
@@ -278,10 +278,10 @@ const Home = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl font-bold text-orange-500 mb-4">
               Why Learning From Life Matters
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-green-600 max-w-2xl mx-auto">
               Real growth comes from real experiences. Here's why documenting
               life lessons is transformative.
             </p>

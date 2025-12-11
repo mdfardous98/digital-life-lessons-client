@@ -104,7 +104,7 @@ const AddLesson = () => {
           <h1 className="text-3xl font-extrabold text-gradient-to-r from-purple-600 via-pink-500 to-red-500 mb-2 animate-gradient-x">
             Create New Lesson
           </h1>
-          <p className="text-gray-700 dark:text-gray-200">
+          <p className="text-gray-700 dark:text-amber-500">
             Share your wisdom and experiences with the community
           </p>
         </div>

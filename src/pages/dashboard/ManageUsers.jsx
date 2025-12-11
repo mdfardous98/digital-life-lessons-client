@@ -131,10 +131,10 @@ const ManageUsers = () => {
       <div className="max-w-7xl mx-auto">
         <div className="mb-8 flex items-center justify-between">
           <div>
-            <h1 className="text-3xl font-bold text-gray-800 mb-2">
+            <h1 className="text-3xl font-bold text-gray-800 dark:text-secondary-500 mb-2">
               Manage Users
             </h1>
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-surface-light">
               Manage all registered users on the platform
             </p>
           </div>

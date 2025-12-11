@@ -222,10 +222,10 @@ const AdminDashboard = () => {
             <FaChartLine className="text-2xl text-white" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-secondary-500">
               Admin Dashboard
             </h1>
-            <p className="text-gray-700">
+            <p className="text-gray-700 dark:text-pink-50">
               Overview of platform statistics and activities
             </p>
           </div>

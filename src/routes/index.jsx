@@ -30,7 +30,7 @@ import ManageUsers from "../pages/dashboard/ManageUsers";
 import ManageLessons from "../pages/dashboard/ManageLessons";
 import ReportedLessons from "../pages/dashboard/ReportedLessons";
 
-// 3. ROUTER
+//  ROUTER
 export const router = createBrowserRouter(
   [
     {
@@ -38,8 +38,6 @@ export const router = createBrowserRouter(
       element: <App />,
       errorElement: <NotFound />,
       children: [
-       
-
         { path: "payment/success", element: <PaymentSuccess /> },
         { path: "payment/cancel", element: <PaymentCancel /> },
 
@@ -71,7 +69,7 @@ export const router = createBrowserRouter(
                 { path: "favorites", element: <Favorites /> },
                 { path: "profile", element: <Profile /> },
 
-                // Admin Routes 
+                // Admin Routes
                 {
                   path: "admin",
                   element: (

@@ -2,40 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Base tweaks */
 @layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  /* explicit light-mode body colors (avoid custom @apply tokens that may not be available) */
   body {
-    @apply text-gray-800 antialiased;
+    background-color: #e199e4dc; /* light surface */
+    color: #00249cbe; /* neutral-900 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* dark mode body */
+  .dark body {
+    background-color: #0f1724; /* dark */
+    color: #560cacd2; /* neutral-100 */
+  }
+
+  a {
+    color: #e5465b; /* primary */
+    transition: color 0.15s ease;
+  }
+  a:hover {
+    color: #5ebdc4b2; /* primary-700 */
   }
 }
 
+/* Component utilities */
 @layer components {
+  /* Primary button */
   .btn-primary {
-    @apply bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors font-medium;
+    @apply inline-flex items-center justify-center text-white px-4 py-2 rounded-lg font-medium shadow-soft transition transform;
+    background-image: linear-gradient(
+      90deg,
+      #666931 0%,
+      #ec4899 100%
+    ); /* gradient from config primary -> secondary */
   }
-  
+  .btn-primary:focus {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-dark;
+  }
+
+  /* Secondary button */
   .btn-secondary {
-    @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors font-medium;
+    @apply inline-flex items-center justify-center bg-gray-100 text-neutral-800 px-4 py-2 rounded-lg font-medium border border-gray-200 hover:bg-gray-200 transition;
   }
-  
+  .dark .btn-secondary {
+    @apply bg-gray-800 text-neutral-100 border-gray-700 hover:bg-gray-700;
+  }
+
+  /* Card: replaced bg-surface-light (problematic) with explicit bg classes */
   .card {
-    @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow;
+    background-color: #eed0d0;
+    @apply rounded-xl shadow-lg p-6 transition-shadow hover:shadow-red-700;
   }
-  
+  .dark .card {
+    background-color: #d9dfe7; /* dark-ish card bg */
+    @apply shadow-lg;
+  }
+
+  /* Input field with accessible ring and dark mode */
   .input-field {
-    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+    @apply w-full px-4 py-3 border border-primary-500 rounded-lg bg-orange-400 text-neutral-900 focus:outline-none transition ring-0;
   }
-  
+  .input-field:focus {
+    @apply ring-2;
+    /* use accent color from config; explicit color if ring variable is not available */
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.12);
+    border-color: transparent;
+  }
+  .dark .input-field {
+    @apply bg-gray-700 border-gray-600 text-neutral-100;
+  }
+
+  /* Pill helper */
+  .pill {
+    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold transition;
+  }
+
+  /* Premium badge: use explicit bg color (badge token may exist but explicit avoids errors) */
+  .premium-badge {
+    @apply pill shadow-sm;
+    background-color: #f59e0b; /* amber-500 */
+    color: #0b1220;
+  }
+  .premium-badge:hover {
+    background-color: #fbbf24; /* amber-400 */
+  }
+
+  /* Truncation helpers */
   .line-clamp-2 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
-  
   .line-clamp-3 {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+  }
+
+  .divider {
+    @apply border-t border-gray-200 dark:border-gray-700 my-6;
+  }
+
+  .h1 {
+    @apply text-2xl font-semibold text-neutral-900 dark:text-neutral-100;
+  }
+  .h2 {
+    @apply text-xl font-semibold text-neutral-900 dark:text-neutral-100;
+  }
+  .muted {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+  .btn-primary {
+    @apply px-3 py-2 text-sm;
+  }
+  .premium-badge {
+    @apply px-2 py-1 text-xs;
   }
 }
