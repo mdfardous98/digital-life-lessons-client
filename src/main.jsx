@@ -1,23 +1,24 @@
 import React from "react";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import { ThemeProvider } from "./contexts/ThemeContext.jsx";
-import { AuthProvider } from "./contexts/AuthContext.jsx";
-import { Toaster } from "react-hot-toast";
+import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import router from "./routes/index.jsx";
-import { ToastContainer } from "react-toastify";
+import { HelmetProvider } from "react-helmet-async";
+import { AuthProvider } from "./contexts/AuthContext";
+import { StripeProvider } from "./contexts/StripeContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
-createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <ThemeProvider>
+import { router } from "./routes";
+import "./index.css";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <HelmetProvider>
       <AuthProvider>
-        <RouterProvider router={router} />
-        <ToastContainer />
-        <Toaster position="top-center" />
+        <ThemeProvider>
+          <StripeProvider>
+            <RouterProvider router={router} />
+          </StripeProvider>
+        </ThemeProvider>
       </AuthProvider>
-    </ThemeProvider>
-  </StrictMode>
+    </HelmetProvider>
+  </React.StrictMode>
 );
