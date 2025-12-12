@@ -35,7 +35,8 @@ export const StripeProvider = ({ children }) => {
       const token = await user.getIdToken();
       const response = await axios.post(
         `${
-          import.meta.env.VITE_API_URL || "http://localhost:5000"
+          import.meta.env.VITE_API_URL ||
+          "https://digital-life-lessons-server-lilac.vercel.app"
         }/api/create-checkout-session`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }

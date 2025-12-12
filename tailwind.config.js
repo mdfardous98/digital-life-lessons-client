@@ -5,24 +5,23 @@ export default {
   theme: {
     extend: {
       colors: {
-        // (higher contrast / modern)
         primary: {
-          DEFAULT: "#4f46e5", // indigo-600
+          DEFAULT: "#4f46e5",
           600: "#4f46e5",
           700: "#4338ca",
           500: "#6366f1",
         },
         secondary: {
-          DEFAULT: "#ec4899", // pink-500
+          DEFAULT: "#ec4899",
           500: "#ec4899",
           600: "#db2777",
         },
         accent: {
-          DEFAULT: "#06b6d4", // cyan-500
+          DEFAULT: "#06b6d4",
           500: "#06b6d4",
           400: "#22d3ee",
         },
-        // semantic neutrals
+
         surface: {
           light: "#ffffff",
           muted: "#f8fafc",

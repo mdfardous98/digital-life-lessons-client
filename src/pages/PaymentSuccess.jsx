@@ -52,12 +52,12 @@ const PaymentSuccess = () => {
         await checkPremiumStatus();
         const token = await user.getIdToken();
 
-        // ADDED: construct URL that includes session_id as query param so backend can check using session
+      
         const url =
           `${import.meta.env.VITE_API_URL}/api/users/me` +
           (sessionId ? `?session_id=${encodeURIComponent(sessionId)}` : "");
 
-        // ADDED: use the constructed URL in the API call (replaces the previous hard-coded endpoint)
+       
         const response = await axios.get(url, {
           headers: { Authorization: `Bearer ${token}` },
         });

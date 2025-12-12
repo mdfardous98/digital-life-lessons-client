@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API_URL =
+  import.meta.env.VITE_API_URL ||
+  "https://digital-life-lessons-server-lilac.vercel.app";
 
 const api = axios.create({
   baseURL: API_URL,
@@ -12,7 +14,6 @@ const api = axios.create({
 // Request to add auth token
 api.interceptors.request.use(
   async (config) => {
-    
     return config;
   },
   (error) => {

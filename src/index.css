@@ -10,7 +10,7 @@
     height: 100%;
   }
 
-  /* explicit light-mode body colors (avoid custom @apply tokens that may not be available) */
+  /*  light-mode body colors  */
   body {
     background-color: #e199e4dc; /* light surface */
     color: #00249cbe; /* neutral-900 */
@@ -20,16 +20,16 @@
 
   /* dark mode body */
   .dark body {
-    background-color: #0f1724; /* dark */
-    color: #560cacd2; /* neutral-100 */
+    background-color: #0f1724;
+    color: #560cacd2;
   }
 
   a {
-    color: #e5465b; /* primary */
+    color: #e5465b;
     transition: color 0.15s ease;
   }
   a:hover {
-    color: #5ebdc4b2; /* primary-700 */
+    color: #5ebdc4b2;
   }
 }
 
@@ -38,11 +38,7 @@
   /* Primary button */
   .btn-primary {
     @apply inline-flex items-center justify-center text-white px-4 py-2 rounded-lg font-medium shadow-soft transition transform;
-    background-image: linear-gradient(
-      90deg,
-      #666931 0%,
-      #ec4899 100%
-    ); /* gradient from config primary -> secondary */
+    background-image: linear-gradient(90deg, #666931 0%, #ec4899 100%);
   }
   .btn-primary:focus {
     @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white dark:ring-offset-dark;
@@ -56,13 +52,13 @@
     @apply bg-gray-800 text-neutral-100 border-gray-700 hover:bg-gray-700;
   }
 
-  /* Card: replaced bg-surface-light (problematic) with explicit bg classes */
+  /* Card */
   .card {
     background-color: #eed0d0;
     @apply rounded-xl shadow-lg p-6 transition-shadow hover:shadow-red-700;
   }
   .dark .card {
-    background-color: #d9dfe7; /* dark-ish card bg */
+    background-color: #d9dfe7;
     @apply shadow-lg;
   }
 
@@ -72,7 +68,7 @@
   }
   .input-field:focus {
     @apply ring-2;
-    /* use accent color from config; explicit color if ring variable is not available */
+
     box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.12);
     border-color: transparent;
   }
@@ -80,22 +76,20 @@
     @apply bg-gray-700 border-gray-600 text-neutral-100;
   }
 
-  /* Pill helper */
   .pill {
     @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold transition;
   }
 
-  /* Premium badge: use explicit bg color (badge token may exist but explicit avoids errors) */
+  /* Premium badge */
   .premium-badge {
     @apply pill shadow-sm;
-    background-color: #f59e0b; /* amber-500 */
+    background-color: #f59e0b;
     color: #0b1220;
   }
   .premium-badge:hover {
-    background-color: #fbbf24; /* amber-400 */
+    background-color: #fbbf24;
   }
 
-  /* Truncation helpers */
   .line-clamp-2 {
     overflow: hidden;
     display: -webkit-box;
